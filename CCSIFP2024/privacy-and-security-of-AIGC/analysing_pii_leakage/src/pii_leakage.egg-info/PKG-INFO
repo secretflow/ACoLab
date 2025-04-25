@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pii-leakage
+Version: 0.1.0
+Summary: Analyzing PII leakage in LMs
+Home-page: https://github.com/microsoft/analysing_pii_leakage
+Author: Nils Lukas
+Author-email: nlukas@uwaterloo.ca
+License: MIT License
+License-File: LICENSE
+Requires-Dist: torch<2.0,>=1.10
+Requires-Dist: transformers
+Requires-Dist: tqdm
+Requires-Dist: flair@ git+https://github.com/flairNLP/flair
+Requires-Dist: dp_transformers@ git+https://github.com/microsoft/dp-transformers.git@main#egg=dp_transformers
+Requires-Dist: opacus
