@@ -1,0 +1,3 @@
+[submodule "CCSIFP2024/privacy-and-security-of-AIGC/GrIDPure/data"]
+	path = CCSIFP2024/privacy-and-security-of-AIGC/GrIDPure/data
+	url = https://github.com/qwkkkkk/GrIDPure_data
