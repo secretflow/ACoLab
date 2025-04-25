@@ -1,0 +1,19 @@
+{
+    "model_info":{
+        "provider":"internlm",
+        "name":"./model/internlm2_5-7b-chat"
+    },
+    "api_key_info":{
+        "api_keys":[
+            ""
+        ],
+        "api_key_use": 0
+    },
+    "params":{
+        "temperature":0.1,
+        "seed":100,
+        "gpus":[0],
+        "device":"cuda",
+        "max_output_tokens":150
+    }
+}
