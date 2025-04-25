@@ -5,7 +5,8 @@ export CLEAN_DIR="data/$DATA_NAME/set_B"
 export OUTPUT_DIR="outputs/$DATA_NAME"
 export CLASS_DIR="class_images/class-person"
 
-accelerate launch attacks/simac.py \
+
+accelerate launch anti_dreambooth.py \
   --pretrained_model_name_or_path=$MODEL_NAME  \
   --enable_xformers_memory_efficient_attention \
   --instance_data_dir_for_train=$CLEAN_DIR \
@@ -31,6 +32,4 @@ accelerate launch attacks/simac.py \
   --max_adv_train_steps=6 \
   --pgd_alpha=5e-3 \
   --pgd_eps=5e-2 \
-  --checkpointing_iterations=10 \
-  --search_steps=50 \
-  --search_delete=20
+  --checkpointing_iterations=10 
