@@ -1,0 +1,19 @@
+{
+    "model_info":{
+        "provider":"qwen",
+        "name":"./model/Qwen2.5-7B-Instruct-AWQ"
+    },
+    "api_key_info":{
+        "api_keys":[
+            ""
+        ],
+        "api_key_use": 0
+    },
+    "params":{
+        "temperature":0.1,
+        "seed":100,
+        "gpus":[0],
+        "device":"cuda",
+        "max_output_tokens":150
+    }
+}
