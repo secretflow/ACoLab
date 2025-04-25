@@ -1,0 +1,7 @@
+dataset,purification_type,steps,psnr,ssim
+celebahq-caption,advdm_diffpure,50,11.731975679424666,0.5246205012141827
+celebahq-caption,antidb_diffpure,50,17.65286292266005,0.596690890865442
+celebahq-caption,advdm_diffpure,100,11.740017301767212,0.5264599203901016
+celebahq-caption,antidb_diffpure,100,17.13171613804904,0.5896428713732633
+celebahq-caption,advdm_gridpure,na,11.710498287795827,0.5090259836972605
+celebahq-caption,antidb_gridpure,na,16.706790387226643,0.6081794659661349
