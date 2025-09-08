@@ -1,0 +1,1 @@
+python /mnt2/name_prune/evaluation/eval_winogrande_vllm.py /mnt2/name_prune/saves/llama3-1-8b-instruct/lora/winogrande_acl_swift_layer_prune_important/v*/checkpoint-*-merged llama3_1
