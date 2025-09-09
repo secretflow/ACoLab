@@ -1,0 +1,14 @@
+[
+    {
+        "conversations": [
+            {
+                "from": "human",
+                "value": "Judge whether the following sentences entail each other. You only need to answer entailment or not entailment. Sentence 1:No Weapons of Mass Destruction Found in Iraq Yet.\nSentence 2:Weapons of Mass Destruction Found in Iraq.\nanswer:"
+            },
+            {
+                "from": "gpt",
+                "value": "not entailment"
+            }
+        ]
+    }
+]

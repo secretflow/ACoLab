@@ -1,0 +1,14 @@
+[
+    {
+        "conversations": [
+            {
+                "from": "human",
+                "value": "Please create a cloze test and provide the word that should fill in the blank in the following sentence. You need to choose one from Ian or Dennis as your answer. You only need to give one word, no additional content is needed. Sentence:Ian volunteered to eat Dennis's menudo after already having a bowl because _ despised eating intestine."
+            },
+            {
+                "from": "gpt",
+                "value": "Dennis"
+            }
+        ]
+    }
+]

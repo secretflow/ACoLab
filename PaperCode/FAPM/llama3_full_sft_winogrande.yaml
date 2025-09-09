@@ -1,0 +1,49 @@
+### model
+model_name_or_path: /mnt/data1/model/meta-llama/Meta-Llama-3-8B-Instruct
+
+### method
+stage: sft
+do_train: true
+# finetuning_type: full
+finetuning_type: lora
+lora_target: all
+
+### ddp
+ddp_timeout: 9000
+deepspeed: examples/deepspeed/ds_z3_config.json
+
+### dataset
+dataset: winogrande
+template: llama3
+cutoff_len: 2048
+# max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+cache_dir: /data/cache
+
+### output
+output_dir: */Llama3-winogrande-5e-6
+logging_steps: 10
+# save_steps: 3000
+save_strategy: epoch
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+learning_rate: 5.0e-6
+num_train_epochs: 3.0
+# max_steps: 12000
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+weight_decay: 0.1
+bf16: true
+
+use_delta: true
+
+### eval
+val_size: 0.0001
+per_device_eval_batch_size: 1
+eval_strategy: 'no'
+# eval_steps: 500
