@@ -12,24 +12,24 @@ transformers == 4.47.0.dev0
 
 The to-be-processed data undergoes data selection and is then trained to obtain scores on dirty data.
 
-、、、
+```
 cd agentcode/dataset_sample
 python dataset_sample --data_path XX --ratio XX 
 cd Swift
 ./run.sh ##The corresponding data and the running scripts need to be modified.
 cd evaluation
 python infer_vllm.py --model_path XX --model_type XX --test_data_path XX --out_path agentscope/generate_test_data/XX
-、、、
+```
 
 ### Step 2
 
-Using a LLM as an agent to automatically acquire the optimal data processing strategy.
+Using an LLM as an agent to acquire the optimal data processing strategy automatically.
 
-、、、
+```
 cd agentscope
-./script/vllm/vllm_setup_qwen.sh ##启动大模型服务
+./script/vllm/vllm_setup_qwen.sh ##start services
 python meta_agent.py
-、、、
+```
 
 Note: Since the data selection employs the LESS algorithm, which requires an older version of the Touch environment, a separate Conda environment needs to be configured. For detailed setup instructions, please refer to https://github.com/princeton-nlp/LESS.
 
