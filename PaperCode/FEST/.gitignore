@@ -1,0 +1,37 @@
+venv/
+env/
+ENV/
+.venv/
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+
+.DS_Store  # macOS
+Thumbs.db  # Windows
+desktop.ini  # Windows
+
+
+.idea/
+.vscode/
+*.swp  # Vim 临时文件
+*.swo  # Vim 临时文件
+*.idea/
+*.iml
+*.ipr
+*.iws
+
+
+dist/
+build/
+*.egg-info/
+*.egg
