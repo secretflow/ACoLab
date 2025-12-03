@@ -314,7 +314,7 @@ class DisclosureCalculator(PrivacyMetricCalculator):
                 dd['keys'] = dd[keys[0]]
 
             tab_kts = pd.crosstab(ss["target"], ss['keys'])
-            tab_kts.to_csv('/drive1/zhd/synprivutil/examples/tab_kts_python.csv')
+            tab_kts.to_csv('examples\tab_kts_python.csv')
             tab_ktd = pd.crosstab(dd["target"], dd['keys'])
 
             if print_flag:
