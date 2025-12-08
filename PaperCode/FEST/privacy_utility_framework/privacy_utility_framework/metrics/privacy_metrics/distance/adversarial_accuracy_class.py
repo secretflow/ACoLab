@@ -130,10 +130,11 @@ class AdversarialAccuracyCalculator_NN(PrivacyMetricCalculator):
         Returns:
             tuple: (target dataset, source dataset, distances).
         """
-        nn_s = NearestNeighbors(n_neighbors=1, metric=self.distance_metric).fit(self.data[s])
+        nn_s = NearestNeighbors(n_neighbors=2, metric=self.distance_metric).fit(self.data[s])
         if t == s:
-            # Find distances within the same dataset
-            d = nn_s.kneighbors()[0]
+            # Find distances within the same dataset, taking the second nearest neighbor
+            dists, _ = nn_s.kneighbors()
+            d = dists[:, 1].reshape(-1, 1)
         else:
             # Find distances between different datasets
             d = nn_s.kneighbors(self.data[t])[0]

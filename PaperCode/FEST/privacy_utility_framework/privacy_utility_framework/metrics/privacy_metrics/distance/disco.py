@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 from privacy_utility_framework.privacy_utility_framework.metrics.privacy_metrics import PrivacyMetricCalculator
-
+from pathlib import Path
 
 class DisclosureCalculator(PrivacyMetricCalculator):
 
@@ -314,7 +314,7 @@ class DisclosureCalculator(PrivacyMetricCalculator):
                 dd['keys'] = dd[keys[0]]
 
             tab_kts = pd.crosstab(ss["target"], ss['keys'])
-            tab_kts.to_csv('examples\tab_kts_python.csv')
+            tab_kts.to_csv(Path(__file__).resolve().parents[5] / "examples" / "tab_kts_python.csv")
             tab_ktd = pd.crosstab(dd["target"], dd['keys'])
 
             if print_flag:

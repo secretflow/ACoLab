@@ -121,10 +121,11 @@ def utility_metric_manager_example():
     for key, value in results.items():
         print(f"{key}: {value}")
 
-wasserstein_example()
-mutual_information_example()
-ks_example()
-js_similarity_example()
-correlation_example()
-basic_stats_example()
-utility_metric_manager_example()
+if __name__ == "__main__":
+    wasserstein_example()
+    mutual_information_example()
+    ks_example()
+    js_similarity_example()
+    correlation_example()
+    basic_stats_example()
+    utility_metric_manager_example()

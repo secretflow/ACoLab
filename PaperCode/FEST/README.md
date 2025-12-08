@@ -62,7 +62,7 @@ pip install -r requirements.txt
 **Operation**:
 ```bash
 # Navigate to the examples directory
-cd synprivutil/examples  
+cd examples  
 # Run the script
 python train_test.py
 ```
@@ -97,7 +97,7 @@ python synthetic_data_generation.py
 
 
 
-### Phase 3: Data Preprocessing (Run On-Demand)
+### Phase 3: Data Preprocessing 
 
 **Run Script**: `examples/dataset_transform_normalization.py`
 
@@ -207,7 +207,7 @@ python utility.py
 
 **Run Script**: `examples/plots.py`
 
-**Purpose**: Generate 5 key plots from the paper to visualize results
+**Purpose**: Generate some key plots from the paper to visualize results
 
 **Dependencies**:
 - Raw/synthetic data (Phases 1–2)

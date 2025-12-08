@@ -79,7 +79,7 @@ def plot_attributes_example():
 
 def ks_test_plot_comparison():
     synthetic_datasets = ["copulagan", "ctgan", "gaussian_copula", "gmm", "tvae", "random"]
-    original_datasets =["insurance", "insurance", "diabetes"]
+    original_datasets =["insurance", "cardio", "diabetes"]
     for orig in original_datasets:
         similarities = []
         for syn in synthetic_datasets:
@@ -127,10 +127,13 @@ def basic_stats_plot_example():
             all_stats[f'{orig}_{syn}'] = calc.compute_basic_stats()
         for stat in ['mean', 'median', 'var']:
             plot_all_stats_for_stat(all_stats, stat, orig)
-mutual_information_plot_example()
-pairwise_plot_example()
-plot_attributes_example()
-ks_test_plot_comparison()
-correlation_plot_example()
-wasserstein_plot_example()
-basic_stats_plot_example()
+            
+            
+if __name__ == "__main__":
+    mutual_information_plot_example()
+    pairwise_plot_example()
+    plot_attributes_example()
+    ks_test_plot_comparison()
+    correlation_plot_example()
+    wasserstein_plot_example()
+    basic_stats_plot_example()

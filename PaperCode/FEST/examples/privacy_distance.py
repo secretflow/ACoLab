@@ -113,8 +113,9 @@ def privacy_metric_manager_example():
     for key, value in results.items():
         print(f"{key}: {value}")
 
-dcr_example()
-nndr_example()
-nnaa_example()
-privacy_metric_manager_example()
-disco_example()
+if __name__ == "__main__":
+    dcr_example()
+    nndr_example()
+    nnaa_example()
+    privacy_metric_manager_example()
+    disco_example()

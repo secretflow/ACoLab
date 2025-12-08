@@ -28,7 +28,7 @@ def syn_generation_example():
     if use_train:
         # Load the training dataset from the specified path
         data = pd.read_csv(
-            f'../examples/{orig}_datasets/train/{orig}.csv',
+           f'./{orig}_datasets/train/{orig}.csv',
             delimiter=',')
         # Adjust the folder path for synthetic data generation
         folder = f"{folder}/syn_on_train"
@@ -84,9 +84,10 @@ def syn_generation_example():
         random_vanilla_model.save_sample(f"{folder}/random_sample.csv", len(data))
 
 def load_model_example():
+    orig = "insurance"
     # Load a previously saved CTGAN model from the specified path
     ctgan_model = CTGANModel.load_model(
-        "../examples/insurance_datasets/ctgan_model.pkl")
+        f"./{orig}_datasets/ctgan_model.pkl")
     # Generate samples from the loaded CTGAN model
     samples_from_loaded_model = ctgan_model.sample(10)
     print(f"~~~~~Samples from loaded CTGAN Model~~~~~\n {samples_from_loaded_model}")

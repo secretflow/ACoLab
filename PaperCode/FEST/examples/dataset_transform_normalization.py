@@ -34,4 +34,5 @@ def dataset_example():
     print("Synthetic Transformed Data:\n", manager.synthetic_dataset.transformed_data)
     print("Synthetic Normalized Data:\n", manager.synthetic_dataset.transformed_normalized_data)
 
-dataset_example()
+if __name__ == "__main__":
+    dataset_example()

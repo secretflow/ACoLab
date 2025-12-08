@@ -17,9 +17,9 @@ def inference_example():
 
     for orig in original_datasets:
         for syn in synthetic_datasets:
-            original_data = pd.read_csv(f"../examples/{orig}_datasets/train/{orig}.csv")
-            synthetic_data = pd.read_csv(f"../examples/{orig}_datasets/syn_on_train/{syn}_sample.csv")
-            control = pd.read_csv(f"../examples/{orig}_datasets/test/{orig}.csv")
+            original_data = pd.read_csv(f"./{orig}_datasets/train/{orig}.csv")
+            synthetic_data = pd.read_csv(f"./{orig}_datasets/syn_on_train/{syn}_sample.csv")
+            control = pd.read_csv(f"./{orig}_datasets/test/{orig}.csv")
             columns = original_data.columns
             results = []
 
@@ -70,6 +70,7 @@ def singling_out_example():
             print(results)
 
 
-inference_example()
-linkability_example()
-singling_out_example()
+if __name__ == "__main__":
+    inference_example()
+    linkability_example()
+    singling_out_example()
