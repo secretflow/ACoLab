@@ -25,9 +25,8 @@ desktop.ini  # Windows
 
 .idea/
 .vscode/
-*.swp  # Vim 临时文件
-*.swo  # Vim 临时文件
-*.idea/
+*.swp  
+*.swo  
 *.iml
 *.ipr
 *.iws

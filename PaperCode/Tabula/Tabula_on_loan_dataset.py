@@ -78,15 +78,26 @@ synthetic_data.to_csv("loan_100epoch.csv", index=False)
 
 
 # Evaluate F1-score
-def encode_data(df):
-    encoder = LabelEncoder()
-    for col in categorical_columns:
-        df[col] = encoder.fit_transform(df[col])
-    return df
+def encode_data(real_df, synth_df, categorical_cols):
+    encoders = {}
+    for col in categorical_cols:
+        encoder = LabelEncoder()
+        encoders[col] = encoder.fit(real_df[col])
 
 
-real_encoded = encode_data(data.copy())
-synth_encoded = encode_data(synthetic_data.copy())
+    real_encoded = real_df.copy()
+    for col in categorical_cols:
+        real_encoded[col] = encoders[col].transform(real_encoded[col])
+        
+    synth_encoded = synth_df.copy()
+    for col in categorical_cols:
+        synth_encoded[col] = encoders[col].transform(synth_encoded[col])
+        
+    return real_encoded, synth_encoded
+
+real_encoded, synth_encoded = encode_data(
+    data.copy(), synthetic_data.copy(), categorical_columns
+)
 
 X_real, y_real = (
     real_encoded.drop("Personal_Loan", axis=1),
@@ -100,8 +111,9 @@ X_synth, y_synth = (
 # Train with synthetic data, evaluate with real test set
 rf = RandomForestClassifier(n_estimators=100, random_state=42)
 rf.fit(X_synth, y_synth)
-y_pred = rf.predict(X_real.sample(frac=0.2, random_state=42))
-synth_f1 = f1_score(
-    y_real.sample(frac=0.2, random_state=42), y_pred, average="weighted"
-)
+X_real_test = X_real.sample(frac=0.2, random_state=42)
+y_real_test = y_real.loc[X_real_test.index]  
+
+y_pred = rf.predict(X_real_test)
+synth_f1 = f1_score(y_real_test, y_pred, average="weighted")
 print(f"Synthetic data F1-score: {synth_f1:.4f}")

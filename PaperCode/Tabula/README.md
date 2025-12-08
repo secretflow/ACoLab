@@ -91,15 +91,15 @@ pip install -r requirements.txt
 
 
 #### 2.3.4 King Dataset 
-- **Objective**: Download and store in the `./Real_Datasets` directory, and name it `King_compressed.csv`  
+- **Objective**: Download and store in the `./Real_Datasets/King` directory, and name it `King_compressed.csv`  
 - **Command to execute**:  
   ```bash
   # Create a dataset directory (if it does not exist)
-  mkdir -p ./Real_Datasets
+  mkdir -p ./Real_Datasets/King
   # Download and unzip the dataset
-  kaggle datasets download -d harlfoxem/housesalesprediction --unzip -p ./Real_Datasets
+  kaggle datasets download -d harlfoxem/housesalesprediction --unzip -p ./Real_Datasets/King
   # Rename the dataset (to simplify subsequent loading paths)
-  mv ./Real_Datasets/kc_house_data.csv ./Real_Datasets/King_compressed.csv
+  mv ./Real_Datasets/King/kc_house_data.csv ./Real_Datasets/King/King_compressed.csv
   ```  
 
 
@@ -121,8 +121,8 @@ python Tabula_middle_padding_on_insurance_dataset.py
 python evaluation.py
 ```
 
-# VI. Tabula Reproduction Experiment Results (Insurance Dataset)
-
+# IV. Tabula Reproduction Experiment Results (Insurance Dataset)
+The following results are obtained from reproducing the TabuLa model on the Insurance datase
 | Dataset   | Task Type | Average MAPE (Tabula Reproduction) | Correlation Distance (Tabula Reproduction) |
 |-----------|-----------|------------------------------------|-------------------------------------------|
 | Insurance | Regression| 0.5288                             | 0.1933                                    |

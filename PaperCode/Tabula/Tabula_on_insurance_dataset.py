@@ -12,7 +12,7 @@ categorical_columns = ["sex", "children", "sm", "region"]
 model = Tabula(
     llm="distilgpt2",
     experiment_dir="insurance_training",
-    batch_size=8,
+    batch_size=32,
     epochs=400,
     categorical_columns=categorical_columns,
 )
@@ -29,7 +29,7 @@ model.model.load_state_dict(
 model.fit(data)
 
 
-import torch
+
 
 torch.save(model.model.state_dict(), "insurance_training/model_400epoch.pt")
 

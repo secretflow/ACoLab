@@ -35,7 +35,6 @@ cat_cols = data.select_dtypes(include=["object"]).columns.tolist()
 print("\nKing dataset final number of categorical columns:", len(cat_cols))
 print("Categorical columns list:", cat_cols)
 
-data = pd.read_csv("Real_Datasets/King_compressed.csv")
 print("Data shape:", data.shape)
 print("Categorical columns:", data.select_dtypes(include=["object"]).columns.tolist())
 
@@ -43,8 +42,8 @@ print("Categorical columns:", data.select_dtypes(include=["object"]).columns.tol
 model = Tabula(
     llm="distilgpt2",
     experiment_dir="king_training",
-    batch_size=16,  # Reduce batch size to prevent GPU OOM (more features per row)
-    epochs=300,  # Adjusted for smaller dataset
+    batch_size=8, 
+    epochs=300,  
     categorical_columns=categorical_columns,
 )
 
