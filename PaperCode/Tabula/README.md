@@ -121,7 +121,7 @@ python Tabula_middle_padding_on_insurance_dataset.py
 python evaluation.py
 ```
 
-# IV. Tabula Reproduction Experiment Results (Insurance Dataset)
+## IV. Tabula Reproduction Experiment Results (Insurance Dataset)
 The following results are obtained from reproducing the TabuLa model on the Insurance datase
 | Dataset   | Task Type | Average MAPE (Tabula Reproduction) | Correlation Distance (Tabula Reproduction) |
 |-----------|-----------|------------------------------------|-------------------------------------------|
